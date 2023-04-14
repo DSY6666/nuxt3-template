@@ -1,5 +1,15 @@
 # nuxt3-template
 nuxt3 + Element-plus + windicss，包括接口调用封装(接口地址代理配置)，项目打包部署(pm2+nginx)
+好用记得给个star
+
+## 文件结构目录
+- components // 公共组件
+- layouts // 布局组件
+- pages // 页面
+- public // 静态资源
+- utils // 各种工具包含接口请求封装
+- ecosystem.config.js // pm2配置
+- nuxt.config.ts // nuxt配置
 
 ## Setup
 
@@ -22,6 +32,39 @@ Start the development server on http://localhost:3000
 
 ```bash
 npm run dev
+```
+## SEO
+nuxt.config.ts
+```
+app: {
+        head: {
+            charset: 'utf-8',
+            viewport: 'width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0',
+            title: 'nuxt3-template', // 全局页面title
+            // 配置描述，关键词等
+            meta: [
+                { name: 'description', content: 'description' }
+            ],
+            link: [
+                { rel: "icon", type: "image/x-icon", href: "/img/favicon.ico" }
+            ]
+
+        }
+    },
+```
+app.vue
+```
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - site-name` : `site-name`;
+  }
+})
+```
+其他页面动态设置title等
+```
+useHead({
+  title: '新闻详情'
+})
 ```
 
 ## 打包部署pm2+nginx
