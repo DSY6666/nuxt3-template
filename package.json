@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-template",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@element-plus/nuxt": "^1.0.4",
+    "@vueuse/core": "^9.13.0",
+    "@vueuse/nuxt": "^9.13.0",
+    "nuxt": "^3.3.2",
+    "nuxt-windicss": "^2.6.0",
+    "sass": "^1.60.0",
+    "unplugin-auto-import": "^0.15.2",
+    "unplugin-vue-components": "^0.24.1"
+  }
+}
